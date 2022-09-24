@@ -10,13 +10,10 @@ function newFlight(req, res) {
 
 function create(req, res) {
   console.log('This is the create flight function!')
-  res.redirect('/flights/new', {
-    title: 'Add Flight'
-  })
   Flight.create(req.body)
     .then(flight => {
       console.log('This is the flight being created:', flight)
-      res.redirect('/flights/new')
+      res.redirect('/flights')
     })
     .catch(err => {
       res.redirect('/flights/new')
