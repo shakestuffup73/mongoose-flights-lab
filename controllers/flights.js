@@ -3,7 +3,15 @@ import { Flight } from '../models/flight.js'
 
 function newFlight(req, res) {
   console.log('newFlight controller responding!')
+  const newFlight = new Flight()
+
+  const departs = newFlight.departs
+  const departsDate = departs.toISOString().slice(0, 16)
+  console.log('This is departsDate', departsDate)
+
+  console.log('This is newFlight', newFlight)
   res.render('flights/new', {
+    departsDate,
     title: 'Add Flight',
   })
 }
