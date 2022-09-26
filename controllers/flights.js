@@ -62,12 +62,29 @@ function update(req, res) {
   for (let key in req.body) {
     if (req.body[key] === '') delete req.body[key]
   }
-  console.log('this is the ticket being created for flight id:', req.params.id)
+  console.log('this is the ticket created for flight id:', req.params.id)
 }
 
 
 function createTicket(req, res){
   console.log('This is the create ticket function!')
+  console.log(req.body)
+  Flight.findById(req.params.id)
+  .then(flight => {
+    flight.tickets.push(req.body)
+    flight.save()
+    .then(() =>{
+      res.redirect(`/flights/${flight._id}`)
+    })
+    .catch(error => {
+      console.log(error)
+      res.redirect('/')
+    })
+  })
+  .catch(error => {
+    console.log(error)
+    res.redirect('/')
+  })
 }
 
 
