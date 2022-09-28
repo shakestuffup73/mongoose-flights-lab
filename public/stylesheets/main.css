@@ -19,22 +19,25 @@ body {
 }
 
 body > main {
+  margin: 10px 10px 0px 10px;
   grid-area: main;
+  align-items: center;
   display: flex;
-  flex-wrap: wrap;
   flex-direction: column;
   align-items: flex-start;
 }
 
 #adventure {
+  align-self: center;
   color: whitesmoke;
   font-family: tomarik-display;
   text-align: center;
-  font-size: 16px;
+  font-size: 14px;
   padding: 8px;
 }
 
 #aboard {
+  border: 4px solid rgb(65, 37, 37);
   text-align: center;
   font-size: 8px;
   padding: 8px;
@@ -46,14 +49,14 @@ body > main {
   font-weight: 400;
   font-style: normal;
   color: black;
-  border-radius: 30%;
+  text-shadow: 2px 2px whitesmoke;
   margin: 15px;
-  background-color: rgba(255, 228, 196, 0.617);
   text-align: center;
   font-size: 24px;
 }
 
 #delights {
+  border: 4px solid rgb(65, 37, 37);
   background-color: #044d38a7;
   padding: 5px;
   text-align: center;
@@ -61,6 +64,8 @@ body > main {
 
 #leg-room {
   color: black;
+  border: 4px solid whitesmoke;
+  text-shadow: 2px 2px whitesmoke;
   background-color: rgba(255, 228, 196, 0.627);
   padding: 5px;
   text-align: center;
@@ -85,6 +90,12 @@ body > main {
   line-height: 24px;
   font-size: 14px;
 }
+
+#meal {
+  border: 4px solid rgb(65, 37, 37);
+  padding: 4px;
+}
+
 
 hr {
   color: rgb(65, 37, 37);
