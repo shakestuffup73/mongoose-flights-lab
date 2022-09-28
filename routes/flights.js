@@ -17,6 +17,9 @@ router.post('/:id/meals', flightsCtrl.addToMeal)
 /* PUT router */
 router.put('/:id', flightsCtrl.update)
 
+/* DELETE router */
+router.delete('/:id', flightsCtrl.delete)
+
 
 export {
   router

@@ -22,9 +22,9 @@ body > main {
   margin: 10px 10px 0px 10px;
   grid-area: main;
   align-items: center;
+  justify-content: center;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
 }
 
 #adventure {
@@ -42,6 +42,10 @@ body > main {
   font-size: 8px;
   padding: 8px;
   background-color: #044d38a7;
+}
+
+#pineapple-div {
+  background-image: url('/public/media/scribble.png');
 }
 
 #pineapple {
@@ -108,6 +112,9 @@ hr {
 body > nav {
   color: black;
   text-shadow: 2px 2px whitesmoke;
+  font-family: tomarik-display,sans-serif;
+  font-weight: 400;
+  font-style: normal;
   grid-area: nav;
   background-color: rgba(255, 228, 196);
   display: flex;
@@ -137,6 +144,10 @@ nav > a:hover {
 
 nav > a.active {
   background-color: #044d38a7;
+  color: black;
+  text-shadow: 2px 2px whitesmoke;
+  font-size: 14px;
+  font-family: tomarik-display;
 }
 
 table, form {
@@ -166,6 +177,11 @@ table, form {
 #seat-price {
   margin: 10px;
 }
+
+#title {
+  justify-self: flex-start;
+}
+
 
 input, select {
   background: #044d38;
