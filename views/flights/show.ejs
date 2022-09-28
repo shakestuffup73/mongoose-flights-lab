@@ -4,7 +4,7 @@
 
 <main>
   <h1><%= title %></h1>
-  <section>
+  <section id="flightDetail">
     <div>Airline: <%= flight.airline %></div>
     <div>Airport: <%= flight.airport %></div>
     <div>Flight Number: <%= flight.flightNo %></div>
@@ -24,7 +24,10 @@
     </select>
     <button type="submit">Add Meal</button>
   </form>
-  <h2>Add a Ticket</h2>
+  <hr>
+  <div>
+    <h2 id="addTicket">Add a Ticket</h2>
+  </div>
   <form
     action="/flights/<%= flight._id %>/tickets"
     method="POST"
@@ -38,7 +41,7 @@
   </form>
 
   <% if (flight.tickets.length) { %>
-  <table>
+  <table id="seat-price">
     <thead>
       <tr>
         <th>Seat</th>
@@ -54,7 +57,9 @@
       <% }) %>
   </table>
   <% } else { %>
+  <div id="noTix">
     <h3>No Tickets Reserved Yet</h3>
+  </div>
   <% } %>
   </main>
 

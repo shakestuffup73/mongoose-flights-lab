@@ -1,81 +1,197 @@
 html {
-  box-sizing: border-box
-}
-
-/* The Universal Selector */
-*, /* All elements*/
-*::before, /* All ::before pseudo-elements */
-*::after { /* All ::after pseudo-elements */
-  /* height & width will now include border & padding by default
-     but can be over-ridden as needed */
-  box-sizing: inherit;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-  Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  background-image: url('../media/pineapple.jpg');
 }
 
 body {
-  background-color: gray;
-  /* Use a system font, if none are available use an available sans-sarif font */
-  margin: 0;
-  color: #424748;
+  font-family: tomarik-display,sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: whitesmoke;
   min-height: 100vh;
   display: grid;
-  grid-template-rows: 50px 1fr;
+  grid-template-rows: 40px 1fr;
   grid-template-areas:
     "nav"
     "main";
-  font-size: 18px;
+  align-content: center;
+  justify-content: center;
+  font-size: 12px;
 }
 
 body > main {
   grid-area: main;
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
-  align-items: center;
-  background-color: #e8eceb;
-  padding: 20px;
+  align-items: flex-start;
 }
 
-body > main h1:first-child {
-  margin-bottom: 50px;
+#adventure {
+  color: whitesmoke;
+  font-family: tomarik-display;
+  text-align: center;
+  font-size: 16px;
+  padding: 8px;
+}
+
+#aboard {
+  text-align: center;
+  font-size: 8px;
+  padding: 8px;
+  background-color: #044d38a7;
+}
+
+#pineapple {
+  font-family: worker-3d-block1,serif;
+  font-weight: 400;
+  font-style: normal;
+  color: black;
+  border-radius: 30%;
+  margin: 15px;
+  background-color: rgba(255, 228, 196, 0.617);
+  text-align: center;
+  font-size: 24px;
+}
+
+#delights {
+  background-color: #044d38a7;
+  padding: 5px;
+  text-align: center;
+}
+
+#leg-room {
+  color: black;
+  background-color: rgba(255, 228, 196, 0.627);
+  padding: 5px;
+  text-align: center;
+}
+
+#addTicket {
+  color: black;
+  text-shadow: 2px 2px whitesmoke;
+  background-color: rgba(255, 228, 196, 0.6);
+  border: 4px solid rgb(65, 37, 37);
+  font-family: tomarik-display;
+  text-align: center;
+  font-size: 26px;
+  padding: 8px;
+}
+
+#flightDetail {
+  margin: 10px;
+  border: 2px solid whitesmoke;
+  background: rgb(65, 37, 37);
+  padding: 10px;
+  line-height: 24px;
+  font-size: 14px;
+}
+
+hr {
+  color: rgb(65, 37, 37);
+  border: 4px solid whitesmoke;
+  margin: 32px;
+  width: 80%;
+  align-self: center;
 }
 
 body > nav {
+  color: black;
+  text-shadow: 2px 2px whitesmoke;
   grid-area: nav;
-  background-color: #b8c0c2;
+  background-color: rgba(255, 228, 196);
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  padding: 0 20px 0 30px;
+  font-size: 14px;
+  border: 4px solid rgb(65, 37, 37);
 }
 
 nav > i {
-  width: 34px;
+  width: 22px;
   object-fit: contain;
   margin-right: auto;
 }
 
 nav > a {
-  margin: 20px;
+  margin: 10px;
   text-decoration: none;
   padding: 10px;
   border-radius: 5px;
-  color: #424748;
-}
-
-nav > a:visited {
-  color: #424748;
+  color: black;
 }
 
 nav > a:hover {
-  color: white;
   background-color: #424748;
 }
 
 nav > a.active {
-  color: white;
+  background-color: #044d38a7;
 }
 
-.fas::before {
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+table, form {
+  align-self: center;
+  text-align: center;
+  font-family: iskra,sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  padding: 10px;
+  color: black;
+  font-size: 16px;
+  background-color: rgba(255, 228, 196);
+  border: 4px solid rgb(65, 37, 37);
+}
+
+#noTix {
+  align-self: center;
+  color: whitesmoke;
+  background-color: #044d38;
+  margin: 20px;
+  font-family: tomarik-display;
+  text-align: center;
+  font-size: 16px;
+  padding: 12px;
+}
+
+#seat-price {
+  margin: 10px;
+}
+
+input, select {
+  background: #044d38;
+  color: whitesmoke;
+  padding: 8px;
+  border: 2px solid whitesmoke;
+  border-radius: 10%;
+  align-self: center;
+  font-family: iskra,sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 16px;
+}
+
+p {
+  font-size: 16px;
+  background-color: #044d38a7;
+}
+
+button {
+  color: whitesmoke;
+  background: #044d38;
+  border-radius: 5%;
+  padding: 7px;
+  margin: 6px;
+  border: 2px solid whitesmoke;
+  font-family: iskra,sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 16px;
+}
+
+button:active {
+  border: 4px solid whitesmoke;
+  border-radius: 20%;
+}
+
+thead {
+  margin: 20px;
 }
