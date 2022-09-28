@@ -1,5 +1,6 @@
 import { render } from 'ejs'
 import { Flight } from '../models/flight.js'
+import { Meal } from '../models/meal.js'
 
 function newFlight(req, res) {
   console.log('newFlight controller responding!')
@@ -21,7 +22,7 @@ function create(req, res) {
   Flight.create(req.body)
   .then(flight => {
     console.log('This is the flight being created:', flight)
-    res.redirect('/flights')
+    res.redirect(`/flights/${flight._id}`)
   })
   .catch(err => {
     res.redirect('/flights/new')
@@ -46,10 +47,19 @@ function index(req, res) {
 function show(req, res) {
   console.log('This is the details show function!')
   Flight.findById(req.params.id)
-  .then(flight => {
-    res.render('flights/show', {
-      title: 'Flight Details',
-      flight: flight
+    .populate('name')
+    .then(flight => {
+      Meal.find({ _id: { $nin: flight.name } })
+        .then(meals => {
+        res.render('flights/show', {
+        title: 'Flight Detail',
+        flight: flight,
+        meals: meals,
+      })
+    })
+    .catch(error => {
+    console.log(error)
+    res.redirect('/')
     })
   })
   .catch(error => {
@@ -87,6 +97,18 @@ function createTicket(req, res){
   })
 }
 
+function addToMeal(req, res) {
+  // Find the flight by it's id
+  Flight.findById(req.params.id)
+  .then(flight => {
+  // Push the id of the meal (mealId in req.body) into cast array
+  flight.name.push(req.body.mealId)
+  flight.save()
+    .then(() => {
+      res.redirect(`/flights/${flight._id}`)
+    })
+  })
+}
 
 export {
   newFlight as new,
@@ -95,4 +117,5 @@ export {
   show,
   update,
   createTicket,
+  addToMeal,
 }

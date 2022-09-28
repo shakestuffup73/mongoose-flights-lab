@@ -3,6 +3,7 @@ import mongoose from 'mongoose'
 const Schema = mongoose.Schema
 
 
+
 const ticketSchema = new Schema ({
   seat: {
     type: String,
@@ -11,7 +12,7 @@ const ticketSchema = new Schema ({
   price: {
     type: Number,
     min: 0,
-  }
+  },
 }, {
   timestamps: true,
 })
@@ -28,6 +29,7 @@ const flightSchema = new Schema({
     default: oneYearFromNow(),
   },
   tickets: [ticketSchema],
+  name: [{type: Schema.Types.ObjectId, ref: 'Meal' }],
 }, {
   timestamps: true,
 })
