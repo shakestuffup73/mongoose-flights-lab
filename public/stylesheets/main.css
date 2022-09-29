@@ -45,7 +45,10 @@ body > main {
 }
 
 #pineapple-div {
-  background-image: url('/public/media/scribble.png');
+  background-image: url('/media/orange.png');
+  background-size: cover;
+  background-repeat: repeat;
+  justify-content: center;
 }
 
 #pineapple {
