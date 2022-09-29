@@ -3,7 +3,9 @@
 <%- include('../partials/nav') %>
 
 <main>
+  <div id="flightDetailsDiv">
   <h1><%= title %></h1>
+  </div>
   <section id="flightDetail">
     <div>Airline: <%= flight.airline %></div>
     <div>Airport: <%= flight.airport %></div>
@@ -32,14 +34,15 @@
     action="/flights/<%= flight._id %>/tickets"
     method="POST"
   >
+  <div id="addTicketFormDiv">
   <label for="seat-select">Seat: </label>
   <input name="seat" required pattern="[A-F][1-9]\d?">
-  <button type="submit">Submit Seat</button>
+  <button type="submit" id="submitBtn1">Submit Seat</button>
   <label for="seat-select">Price: </label>
   <input name="price">
-  <button type="submit">Submit Price</button>
+  <button type="submit" id="submitBtn2">Submit Price</button>
   </form>
-
+  </div>
   <% if (flight.tickets.length) { %>
   <table id="seat-price">
     <thead>
